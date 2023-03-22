@@ -20,7 +20,7 @@
     "posttest": "tsc --noEmit",
     "clean": "rimraf lib && rimraf src/Example.validator.ts",
     "prebuild": "yarn clean",
-    "build": "tsc",
+    "build": "tsc --build tsconfig.json",
     "build:watch": "yarn build -w",
     "postbuild": "node lib/usage && node lib/cli src/Example.ts ExampleType && node lib/cli src/DisjointUnionExample.ts --collection && rimraf lib/__tests__",
     "precommit": "pretty-quick --staged",
