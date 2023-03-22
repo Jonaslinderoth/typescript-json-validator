@@ -13,6 +13,7 @@
     "url": "https://github.com/ForbesLindesay/typescript-json-validator.git"
   },
   "scripts": {
+    "install": "npm run build",
     "test": "jest --no-cache",
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
