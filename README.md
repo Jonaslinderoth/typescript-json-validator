@@ -46,7 +46,6 @@ Note that types will be validated automatically, but you can also use annotation
 ## CLI Docs
 
 <!-- USAGE -->
-
 ```
 Usage: typescript-json-schema <path-to-typescript-file> <type>
 
@@ -110,7 +109,6 @@ Options:
   -*                                                               [default: []]
 
 ```
-
 <!-- USAGE -->
 
 ## License
