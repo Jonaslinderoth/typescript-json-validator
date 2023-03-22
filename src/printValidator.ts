@@ -64,3 +64,10 @@ export function printSingleTypeValidator(
     t.validateFn(typeName, typeName + 'Schema'),
   ].join('\n');
 }
+
+export function printSchemaOnlyValidator(
+  typeName: string,
+  schema: TJS.Definition,
+) {
+  return [t.declareSchema(typeName + 'Schema', schema)].join('\n');
+}

@@ -13,6 +13,7 @@ export interface Options {
   >;
   ajv: Ajv.Options;
   useNamedExport: boolean;
+  exportSchemaOnly: boolean;
 }
 export interface File {
   fileName: string;
@@ -146,6 +147,12 @@ export function parseArgs(args?: string[]): ParsedArgs {
       'useNamedExport',
       'Type name is a named export, rather than the default export of the file',
     )
+    .boolean('exportSchemaOnly')
+    .default('exportSchemaOnly', false)
+    .describe(
+      'exportSchemaOnly',
+      'Only export the JSON schema and to be used by AJV',
+    )
     .parse(args);
 
   const isCollection: boolean = parsedArgs.collection;
@@ -193,6 +200,7 @@ export function parseArgs(args?: string[]): ParsedArgs {
         useDefaults: parsedArgs.defaultProps,
       },
       useNamedExport: parsedArgs.useNamedExport,
+      exportSchemaOnly: parsedArgs.exportSchemaOnly,
     },
   };
 }

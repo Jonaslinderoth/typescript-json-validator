@@ -5,6 +5,7 @@ import parse from './parse';
 import {
   printSingleTypeValidator,
   printTypeCollectionValidator,
+  printSchemaOnlyValidator,
 } from './printValidator';
 import prettierFile from './prettierFile';
 import loadTsConfig from './loadTsConfig';
@@ -15,6 +16,7 @@ export {
   parseArgs,
   printSingleTypeValidator,
   printTypeCollectionValidator,
+  printSchemaOnlyValidator,
 };
 
 export default function run(args?: string[]) {
@@ -27,18 +29,24 @@ export default function run(args?: string[]) {
   );
 
   files.forEach(({fileName, typeName}) => {
-    const outputFileName = fileName.replace(/\.tsx?$/, '.validator.ts');
+    let outputFileName = fileName.replace(/\.tsx?$/, '.validator.ts');
     let validator: string;
     if (typeName) {
-      const schema = parsed.getType(typeName);
-      validator = printSingleTypeValidator(
-        typeName,
-        options.useNamedExport,
-        normalizeSchema(schema),
-        `./${basename(fileName, /\.ts$/.test(fileName) ? '.ts' : '.tsx')}`,
-        tsConfig,
-        options.ajv,
-      );
+      if (options.exportSchemaOnly) {
+        const schema = parsed.getType(typeName);
+        outputFileName = outputFileName.replace(/\.ts?$/, '.js');
+        validator = printSchemaOnlyValidator(typeName, normalizeSchema(schema));
+      } else {
+        const schema = parsed.getType(typeName);
+        validator = printSingleTypeValidator(
+          typeName,
+          options.useNamedExport,
+          normalizeSchema(schema),
+          `./${basename(fileName, /\.ts$/.test(fileName) ? '.ts' : '.tsx')}`,
+          tsConfig,
+          options.ajv,
+        );
+      }
     } else {
       const {symbols, schema} = parsed.getAllTypes();
       validator = printTypeCollectionValidator(

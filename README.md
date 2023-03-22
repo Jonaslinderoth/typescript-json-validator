@@ -105,6 +105,8 @@ Options:
                         one single type.              [boolean] [default: false]
   --useNamedExport      Type name is a named export, rather than the default
                         export of the file            [boolean] [default: false]
+  --exportSchemaOnly    Only export the JSON schema and to be used by AJV
+                                                      [boolean] [default: false]
   -*                                                               [default: []]
 
 ```
