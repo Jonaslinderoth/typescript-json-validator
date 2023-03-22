@@ -5,10 +5,6 @@
   "bin": {
     "typescript-json-validator": "./lib/cli.js"
   },
-  "files": [
-    "lib/",
-    "src/"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ForbesLindesay/typescript-json-validator.git"
