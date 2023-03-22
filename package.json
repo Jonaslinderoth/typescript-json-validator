@@ -19,7 +19,7 @@
     "prebuild": "yarn clean",
     "build": "tsc --build tsconfig.json",
     "build:watch": "yarn build -w",
-    "postbuild": "node lib/usage && node lib/cli src/Example.ts ExampleType",
+    "postbuild": "node lib/usage && node lib/cli src/Example.ts ExampleType && node lib/cli src/DisjointUnionExample.ts --collection && rimraf lib/__tests__",
     "precommit": "pretty-quick --staged",
     "prepush": "yarn prettier:diff && yarn test",
     "prettier": "prettier --ignore-path .gitignore --write './**/*.{js,jsx,ts,tsx}'",
@@ -71,6 +71,20 @@
     "tsconfig-loader": "^1.1.0",
     "typescript-json-schema": "^0.38.3",
     "yargs": "^13.2.4",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.19",
+    "@types/jest": "^23.1.5",
+    "@types/koa": "^2.0.48",
+    "@types/koa-router": "^7.0.39",
+    "@types/node": "^10.5.2",
+    "@types/rimraf": "^2.0.2",
+    "husky": "^0.14.3",
+    "jest": "^23.3.0",
+    "prettier": "^1.13.7",
+    "pretty-quick": "^1.6.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.0.0",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.10.0",
+    "typescript": "^3.4.5"
   }
 }
