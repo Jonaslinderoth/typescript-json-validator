@@ -6,7 +6,8 @@
     "typescript-json-validator": "./lib/cli.js"
   },
   "files": [
-    "lib/"
+    "lib/",
+    "src/"
   ],
   "repository": {
     "type": "git",
