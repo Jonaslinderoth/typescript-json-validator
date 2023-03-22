@@ -25,13 +25,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/ajv@^1.0.0":
-  "integrity" "sha1-T7JEB0Ly9sMOf7B5e4OfxvaWaCo= sha512-yGSqw9/QKd5FXbTNrSANcJ6IHWeNhA+gokXqmlPquJgLDC87d4g2FGPs+AlCeGG0GuZXmPq42hOFA2hnPymCLw=="
-  "resolved" "https://registry.npmjs.org/@types/ajv/-/ajv-1.0.0.tgz"
-  "version" "1.0.0"
-  dependencies:
-    "ajv" "*"
-
 "@types/body-parser@*":
   "integrity" "sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ=="
   "resolved" "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.19.0.tgz"
@@ -208,7 +201,7 @@
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-6.4.0.tgz"
   "version" "6.4.0"
 
-"ajv@*", "ajv@^6.5.5":
+"ajv@^6.5.5":
   "integrity" "sha512-D6gFiFA0RRLyUbvijN74DWAjXSFxWKaWP7mldxkVhyhAV3+SWA9HEJPHQ2c9soIeTFJqcSdFDGFgdqs1iUU2Hw=="
   "resolved" "https://registry.npmjs.org/ajv/-/ajv-6.12.0.tgz"
   "version" "6.12.0"

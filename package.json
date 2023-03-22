@@ -60,7 +60,6 @@
     "testRegex": ".*/__tests__/.*\\.(test|spec)\\.ts$"
   },
   "dependencies": {
-    "@types/ajv": "^1.0.0",
     "@types/cross-spawn": "^6.0.0",
     "@types/glob": "^7.1.1",
     "@types/json-stable-stringify": "^1.0.32",
