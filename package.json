@@ -10,7 +10,7 @@
     "url": "https://github.com/ForbesLindesay/typescript-json-validator.git"
   },
   "scripts": {
-    "install": "npm run clean; tsc --build tsconfig.json",
+    "install": "tsc --build tsconfig.json",
     "test": "jest --no-cache",
     "test:coverage": "yarn test --coverage",
     "test:watch": "yarn test --watch",
