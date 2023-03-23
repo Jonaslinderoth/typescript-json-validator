@@ -29,14 +29,15 @@ export default function run(args?: string[]) {
   );
 
   files.forEach(({fileName, typeName}) => {
-    console.log(`Outputting ${fileName} for type ${typeName}`);
     let outputFileName = fileName.replace(/\.tsx?$/, '.validator.ts');
     let validator: string;
     if (typeName) {
       if (options.exportSchemaOnly) {
         const schema = parsed.getType(typeName);
-        outputFileName = typeName + '.validator.js';
-        console.log(outputFileName);
+        outputFileName = fileName.replace(
+          /\.validator\.ts?$/,
+          '-' + typeName + '.validator.js',
+        );
         validator = printSchemaOnlyValidator(typeName, normalizeSchema(schema));
       } else {
         const schema = parsed.getType(typeName);
