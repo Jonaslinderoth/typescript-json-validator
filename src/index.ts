@@ -29,6 +29,7 @@ export default function run(args?: string[]) {
   );
 
   files.forEach(({fileName, typeName}) => {
+    console.log(`Outputting ${fileName} for type ${typeName}`);
     let outputFileName = fileName.replace(/\.tsx?$/, '.validator.ts');
     let validator: string;
     if (typeName) {
