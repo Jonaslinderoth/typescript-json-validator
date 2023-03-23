@@ -34,7 +34,7 @@ export default function run(args?: string[]) {
     if (typeName) {
       if (options.exportSchemaOnly) {
         const schema = parsed.getType(typeName);
-        outputFileName = fileName.replace(
+        outputFileName = outputFileName.replace(
           /\.validator\.ts?$/,
           '-' + typeName + '.validator.js',
         );
