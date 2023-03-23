@@ -35,6 +35,7 @@ export default function run(args?: string[]) {
       if (options.exportSchemaOnly) {
         const schema = parsed.getType(typeName);
         outputFileName = typeName + '.validator.js';
+        console.log(outputFileName);
         validator = printSchemaOnlyValidator(typeName, normalizeSchema(schema));
       } else {
         const schema = parsed.getType(typeName);
